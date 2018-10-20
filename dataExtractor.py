@@ -85,17 +85,6 @@ class InfoExtractor:
 
 
 
-words_file = open("words.txt", 'r')
-words = words_file.readlines()
-for i in range(len(words)):
-    words[i] = words[i][:-1]
-print(words)
 
-extractor = InfoExtractor()
-extractor.extractWords(words)
-print("Date: " + extractor.getDate())
-print("Time: " + extractor.getTime())
-print(extractor.getLocations())
-print(extractor.getTitles())
 
 

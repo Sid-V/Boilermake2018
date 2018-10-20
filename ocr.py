@@ -2,6 +2,7 @@ import requests
 import string
 import os
 import re
+from dataExtractor import InfoExtractor
 
 subscription_key = "19dde31a0dbb46b09ad2c6331a851bc0"
 assert subscription_key
@@ -42,7 +43,10 @@ for word in word_infos:
 #wordList = [''.join(c for c in s if c is not [':','\','/'] and c not in string.punctuation) for s in wordList]
 
 print(wordList)
-# Write words into file for extraction
-with open('words.txt', 'w') as f:
-    for word in wordList:
-        f.write("%s\n" % word)
+
+extractor = InfoExtractor()
+extractor.extractWords(wordList)
+print("Date: " + extractor.getDate())
+print("Time: " + extractor.getTime())
+print(extractor.getLocations())
+print(extractor.getTitles())
