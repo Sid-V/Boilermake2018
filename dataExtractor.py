@@ -41,18 +41,28 @@ def extractWords(list):
                 continue
 
         elif word[-2:] == 'am' or word[-2:] == 'pm':
-            time = word
+            extracted_time = word[:-2]
+            if re.match('\d{1,2}\:\d{2}\-\d{1,2}\:\d{2}', extracted_time) is not None:
+                time = str(list[i-1][0:list[i-1].index('-')]) + word
+            elif re.match('\d{1,2}\-\d{1,2}', extracted_time) is not None:
+                time = str(list[i-1][0:list[i-1].index('-')]) + word
+            elif re.match('\d{1,2}\:\d{2}', extracted_time) is not None:
+                time = str(list[i-1]) + word
+            elif re.match('\d{1,2}', extracted_time) is not None:
+                time = str(list[i-1]) + word
+            else:
+                continue
+            time = extracted_time + word[-2:]
             continue
+
+        #checking location
         query_result = google_places.nearby_search(location='West Lafayette, United States', keyword=list[i])
         if len(query_result.places) > 0:
             location = query_result.places[0].name
             if list[i+1] is not None:
                 location += ' Room ' + list[i+1]
 
- 
-        
-
-list = ['6', 'am', 'LWSN', 'B160']
+list = ['6', 'am', 'LWSN', 'B160', 'slam']
 extractWords(list)
 print(time)
 print(location)
