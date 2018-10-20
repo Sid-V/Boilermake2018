@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-DDLJLU3</Machine>
+    <WindowsUser>nailt</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>271a9ecc-46f4-4dc3-b006-abe8e9132e5d</PackageIdentityName>
+    <PackageIdentityPublisher>CN=nailt</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\bld\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType>
+    </RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>
+    </WindowsSdkPath>
+    <LayoutDir>C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\bin\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>B861433507F202F904C0819EEEA22FE5B0CAB2643D956A835E470E7D033139C1</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>271a9ecc-46f4-4dc3-b006-abe8e9132e5d_1.0.0.0_neutral__kybee87prs142</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>271a9ecc-46f4-4dc3-b006-abe8e9132e5d_kybee87prs142!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>271a9ecc-46f4-4dc3-b006-abe8e9132e5d</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=nailt</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-10-20T22:38:24.706</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\index.html">
+      <PackagePath>index.html</PackagePath>
+      <Modified>2018-10-20T22:55:56.501</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\images\LockScreenLogo.scale-200.png">
+      <PackagePath>images\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2018-08-24T22:12:02.085</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\images\SplashScreen.scale-200.png">
+      <PackagePath>images\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-08-24T22:12:02.085</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\images\Square150x150Logo.scale-200.png">
+      <PackagePath>images\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-08-24T22:12:02.085</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\images\Square44x44Logo.scale-200.png">
+      <PackagePath>images\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-08-24T22:12:02.085</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\images\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>images\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-08-24T22:12:02.085</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\images\StoreLogo.png">
+      <PackagePath>images\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-08-24T22:12:02.085</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\images\Wide310x150Logo.scale-200.png">
+      <PackagePath>images\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-08-24T22:12:02.085</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\js\main.js">
+      <PackagePath>js\main.js</PackagePath>
+      <Modified>2018-10-20T22:27:43.330</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2018-10-20T22:55:56.476</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nailt\source\repos\BoilermakeWebApp2018JS\BoilermakeWebApp2018JS\bin\Debug\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-10-20T22:38:24.327</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
