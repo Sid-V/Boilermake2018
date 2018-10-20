@@ -22,7 +22,7 @@ class InfoExtractor:
             word = str(list[i])
             #checking date
             if re.match('[0-9]{1,2}/[0-9]{1,2}', word) is not None or re.match('[0-9]{1,2}\.[0-9]{1,2}', word) or re.match('[0-9]{1,2}\-[0-9]{1,2}', word):
-                if list[i+1] != 'am' and list[i+1] != 'pm': # check if i+1 exists
+                if list[i+1] != 'am' and list[i+1] != 'pm' and list[i][-2:] != 'am'  and list[i][-2:] != 'pm': # check if i+1 exists
                     date = word
                     continue
 
@@ -84,11 +84,17 @@ class InfoExtractor:
 
 
 
-list = ['6', 'am', 'LWSN', 'B160','go', 'slam', 'August', '29th']
+
+words_file = open("words.txt", 'r')
+words = words_file.readlines()
+for i in range(len(words)):
+    words[i] = words[i][:-1]
+print(words)
+
 extractor = InfoExtractor()
-extractor.extractWords(list)
-print(extractor.getDate())
-print(extractor.getTime())
+extractor.extractWords(words)
+print("Date: " + extractor.getDate())
+print("Time: " + extractor.getTime())
 print(extractor.getLocations())
 print(extractor.getTitles())
 
