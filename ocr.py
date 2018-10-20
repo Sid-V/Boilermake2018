@@ -1,6 +1,7 @@
 import requests
 import string
 import os
+import re
 
 subscription_key = "19dde31a0dbb46b09ad2c6331a851bc0"
 assert subscription_key
@@ -33,9 +34,12 @@ for line in line_infos:
 wordList = []
 # Add words to list and make all lowercase
 for word in word_infos:
-    wordList.append(word['text'].lower())
+    word = word['text']
+    newWord = re.sub('[^-A-Za-z0-9:\/]+','',word)
+    wordList.append(newWord.lower())
 # remove punctuation
-wordList = [''.join(c for c in s if c not in string.punctuation) for s in wordList]
+
+#wordList = [''.join(c for c in s if c is not [':','\','/'] and c not in string.punctuation) for s in wordList]
 
 print(wordList)
 # Write words into file for extraction
