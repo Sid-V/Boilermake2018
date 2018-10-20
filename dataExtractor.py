@@ -5,7 +5,7 @@ from googleplaces import GooglePlaces, types, lang
 API_KEY = 'AIzaSyAVGOibW9k5jOPiZL_zfR1PHCbkkqXo08s'
 
 google_places = GooglePlaces(API_KEY)
-monthAbbreviations = {'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'}
+monthAbbreviations = {'jan', 'feb', 'mar', 'apr', 'may', 'jun', 'Jul', 'aug', 'Sep', 'Oct', 'Nov', 'Dec'}
 
 date = ''
 time = ''
@@ -23,8 +23,9 @@ def extractWords(list):
             if list[i+1] != 'am' and list[i+1] != 'pm': # check if i+1 exists
                 date = word
                 continue
-        if word[-3:] in monthAbbreviations:
+        if word[:3].lower() in monthAbbreviations:
             if list[i+1] is not None:
+                date = list[i] + " "
                 date += list[i+1]
                 continue
         #checking time
@@ -72,10 +73,9 @@ def extractWords(list):
                 locations.append(query_result.places[0].name)
 
         if(i < 6):
-
             titles.append(list[i])
 
-list = ['6-7', 'am', 'LWSN', 'B160','go', 'slam']
+list = ['6-7', 'am', 'LWSN', 'B160','go', 'slam', 'August', '29th']
 extractWords(list)
 print(date)
 print(time)
