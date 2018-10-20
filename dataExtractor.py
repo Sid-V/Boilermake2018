@@ -13,7 +13,7 @@ class InfoExtractor:
     time = ''
     locations = []
     titles = []
-    
+
     def extractWords(self, list):
         global time
         global locations
@@ -40,10 +40,16 @@ class InfoExtractor:
                     time = str(list[i-1][0:list[i-1].index('-')]) + word
                     continue
                 elif re.match('\d{1,2}\:\d{2}', list[i-1]) is not None:
-                    time = str(list[i-1]) + word
+                    if i > 2 and list[i-2] == '-':
+                        time = str(list[i-3]) + word
+                    else:
+                        time = str(list[i-1]) + word
                     continue
                 elif re.match('\d{1,2}', list[i-1]) is not None:
-                    time = str(list[i-1]) + word
+                    if i > 2 and list[i-2] == '-':
+                        time = str(list[i-3]) + word
+                    else:
+                        time = str(list[i-1]) + word
                     continue
 
             elif word[-2:] == 'am' or word[-2:] == 'pm':
@@ -55,12 +61,18 @@ class InfoExtractor:
                     time = extracted_time + word[-2:]
                     continue
                 elif re.match('\d{1,2}\:\d{2}', extracted_time) is not None:
-                    time = extracted_time + word[-2:]
+                    if i > 1 and list[i-1] == '-':
+                        time = str(list[i-2]) + word[-2:]
+                    else:
+                        time = extracted_time + word[-2:]
                     continue
                 elif re.match('\d{1,2}', extracted_time) is not None:
-                    time = extracted_time + word[-2:]
+                    if i > 1 and list[i-1] == '-':
+                        time = str(list[i-2]) + word[-2:]
+                    else:
+                        time = extracted_time + word[-2:]
                     continue
-           
+
 
             #checking location
             query_result = google_places.nearby_search(location='West Lafayette, United States', keyword=list[i])
@@ -81,10 +93,3 @@ class InfoExtractor:
         return self.locations
     def getTitles(self):
         return self.titles
-
-
-
-
-
-
-
