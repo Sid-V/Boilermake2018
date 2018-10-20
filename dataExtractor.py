@@ -9,7 +9,7 @@ monthAbbreviations = {'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'S
 
 date = ''
 time = ''
-location = ''
+locations = []
 
 def extractWords(list):
     global time
@@ -59,12 +59,14 @@ def extractWords(list):
         query_result = google_places.nearby_search(location='West Lafayette, United States', keyword=list[i])
         if len(query_result.places) > 0:
             location = query_result.places[0].name
-            if list[i+1] is not None:
-                location += ' Room ' + list[i+1]
+            if i < len(list) or list[i+1] is not None:
+                locations.append(query_result.places[0].name + ' Room ' + list[i+1])
+            else:
+                locations.append(query_result.places[0].name)
 
-list = ['6', 'am', 'LWSN', 'B160', 'slam']
+list = ['6', 'am', 'LWSN', 'B160','go', 'slam']
 extractWords(list)
 print(time)
-print(location)
+print(locations)
 
 
