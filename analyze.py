@@ -1,10 +1,11 @@
 import requests
 # If you are using a Jupyter notebook, uncomment the following line.
 #%matplotlib inline
-import matplotlib.pyplot as plt
+
 import json
-from PIL import Image
-from io import BytesIO
+
+
+
 
 # Replace <Subscription Key> with your valid subscription key.
 subscription_key = "19dde31a0dbb46b09ad2c6331a851bc0"
@@ -30,6 +31,13 @@ data    = {'url': image_url}
 response = requests.post(analyze_url, headers=headers, params=params, json=data)
 response.raise_for_status()
 
-print(response.content)
+#obj = JSON.parse(response)
+#print(obj)
+json_data = json.loads(response.text)
+print(json_data)
+
+# for data in json_data:
+#     print(data)
+#print(response.text)
 
 #Convert into json string

@@ -1,20 +1,10 @@
 import requests
 import string
 import os
-# If you are using a Jupyter notebook, uncomment the following line.
-#%matplotlib inline
 
-# Replace <Subscription Key> with your valid subscription key.
 subscription_key = "19dde31a0dbb46b09ad2c6331a851bc0"
 assert subscription_key
 
-# You must use the same region in your REST call as you used to get your
-# subscription keys. For example, if you got your subscription keys from
-# westus, replace "westcentralus" in the URI below with "westus".
-#
-# Free trial subscription keys are generated in the westcentralus region.
-# If you use a free trial subscription key, you shouldn't need to change
-# this region.
 vision_base_url = "https://eastus.api.cognitive.microsoft.com/vision/v2.0/"
 
 ocr_url = vision_base_url + "ocr"
@@ -22,14 +12,15 @@ ocr_url = vision_base_url + "ocr"
 # Set image_url to the URL of an image that you want to analyze.
 image_url = "https://images.collegiatelink.net/clink/images/1f3abac2-2232-4f0a-bfa6-5d601b2f55dad87b412b-2515-48d7-8f64-82be101089d5.jpg?preset=med-w"
 image_url2 = "https://calendar.purdue.edu/calendar/displaymedia.aspx?whatToDo=picture&id=100697"
-
+image_url3 = "https://pbs.twimg.com/media/Dl0AOOuXoAA8q0c.jpg"
 
 headers = {'Ocp-Apim-Subscription-Key': subscription_key}
 params  = {'language': 'unk', 'detectOrientation': 'true'}
-data    = {'url': image_url2}
+data    = {'url': image_url3}
 response = requests.post(ocr_url, headers=headers, params=params, json=data)
 response.raise_for_status()
 
+# Convert to json
 analysis = response.json()
 
 # Extract the word bounding boxes and text.
@@ -40,13 +31,14 @@ for line in line_infos:
         for word_info in word_metadata["words"]:
             word_infos.append(word_info)
 wordList = []
+# Add words to list and make all lowercase
 for word in word_infos:
-    wordList.append(word['text'])
-
+    wordList.append(word['text'].lower())
+# remove punctuation
 wordList = [''.join(c for c in s if c not in string.punctuation) for s in wordList]
 
 print(wordList)
-
+# Write words into file for extraction
 with open('words.txt', 'w') as f:
     for word in wordList:
         f.write("%s\n" % word)
