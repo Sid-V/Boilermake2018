@@ -1,2 +1,4 @@
 token.json
 credentials.json
+__pycache__/dataExtractor.cpython-36.pyc
+__pycache__/quickadd.cpython-36.pyc
