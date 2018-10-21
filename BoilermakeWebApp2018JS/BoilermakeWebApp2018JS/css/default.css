@@ -1,7 +1,7 @@
 ﻿body {
-  	font-size: 		12px;
-  	font-family: 	arial;
-  	zoom:			300%;
+  	font-size:		12px;
+  	font-family:	arial;
+  	zoom:			250%;
  	background-color: #C28E0E;
 }
 
@@ -9,32 +9,31 @@ input{
 	width:			75%;
 }
 
+div{
+	text-align:		center;
+	padding:		5px;
+
+	border-style:	solid;
+	border-width:	1px;
+	border-radius:	2px;
+
+	background-color: #FFF;
+}
+
 #div1{
-    text-align:		center;
     height: 		10%;
     float: 			top;
-    border-style: 	solid;
-    border-width: 	1px;
-    padding:		5px;
-    background-color: #FFF;
 }
 
 #div2 {
 	float:			bottom;
-	height: 		90%;
-	padding: 		5px;
-	text-align: 	center;
-	
-	border-style: 	solid;
-	border-width: 	1px;
-	border-top:		none;
+	height:			90%;
 
-	overflow: 		auto;
-	background-color: #FFF;
+	border-top:		none;
 }
 
 #time{
-	width: 			36%;
+	width:			36%;
 }
 
 #date{
