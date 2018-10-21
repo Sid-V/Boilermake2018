@@ -2,3 +2,12 @@ token.json
 credentials.json
 __pycache__/dataExtractor.cpython-36.pyc
 __pycache__/quickadd.cpython-36.pyc
+photoCalendar/takephoto/__pycache__/__init__.cpython-36.pyc
+photoCalendar/photoCalendar/__pycache__/__init__.cpython-36.pyc
+photoCalendar/photoCalendar/__pycache__/settings.cpython-36.pyc
+photoCalendar/photoCalendar/__pycache__/urls.cpython-36.pyc
+photoCalendar/photoCalendar/__pycache__/wsgi.cpython-36.pyc
+photoCalendar/takephoto/__pycache__/dataExtractor.cpython-36.pyc
+photoCalendar/takephoto/__pycache__/quickadd.cpython-36.pyc
+photoCalendar/takephoto/__pycache__/urls.cpython-36.pyc
+photoCalendar/takephoto/__pycache__/views.cpython-36.pyc
