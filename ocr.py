@@ -5,6 +5,7 @@ import re
 from dataExtractor import InfoExtractor
 from quickadd import Event
 
+
 subscription_key = "19dde31a0dbb46b09ad2c6331a851bc0"
 assert subscription_key
 
