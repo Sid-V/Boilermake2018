@@ -75,14 +75,14 @@ class InfoExtractor:
 
 
             #checking location
-            query_result = google_places.nearby_search(location='West Lafayette, United States', keyword=list[i])
-            if len(query_result.places) > 0:
-                location = query_result.places[0].name
-                if i < len(list)-1:
-                    self.locations.append(query_result.places[0].name + ' Room ' + list[i+1])
-                else:
-                    self.locations.append(query_result.places[0].name)
-
+            # query_result = google_places.nearby_search(location='West Lafayette, United States', keyword=list[i])
+            # if len(query_result.places) > 0:
+            #     location = query_result.places[0].name
+            #     if i < len(list)-1:
+            #         self.locations.append(query_result.places[0].name + ' Room ' + list[i+1])
+            #     else:
+            #         self.locations.append(query_result.places[0].name)
+            self.locations = ['aahan']
             if(i < 6):
                 self.titles.append(list[i])
     def getDate(self):
